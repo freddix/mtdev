@@ -1,11 +1,11 @@
 Summary:	Multitouch library
 Name:		mtdev
-Version:	1.1.4
+Version:	1.1.5
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://bitmath.org/code/mtdev/%{name}-%{version}.tar.bz2
-# Source0-md5:	73a915d6075b31db4f08ab8c6d314695
+# Source0-md5:	52c9610b6002f71d1642dc1a1cca5ec1
 URL:		http://bitmath.org/code/mtdev/
 BuildRequires:	autoconf
 BuildRequires:	automake
