@@ -1,7 +1,7 @@
 Summary:	Multitouch library
 Name:		mtdev
 Version:	1.1.5
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	http://bitmath.org/code/mtdev/%{name}-%{version}.tar.bz2
@@ -45,6 +45,7 @@ mtdev test tool.
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-silent-rules	\
 	--disable-static
 %{__make}
 
@@ -53,6 +54,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -69,7 +72,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libmtdev.so
-%{_libdir}/libmtdev.la
 %{_includedir}/mtdev*.h
 %{_pkgconfigdir}/mtdev.pc
 
